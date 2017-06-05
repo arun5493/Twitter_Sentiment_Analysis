@@ -15,7 +15,8 @@ In addition, we also used Kafka to buffer the tweets before processing. Kafka pr
 ##### Installing Required Python Libraries
 We have provided a text file containing the required python packages: requirements.txt.
 To install all of these at once, simply run (only missing packages will be installed):
-```$ sudo pip install -r requirements.txt
+```
+$ sudo pip install -r requirements.txt
 ```
 
 
