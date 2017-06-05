@@ -43,6 +43,24 @@ $ bin/kafka -topics.sh --create --zookeeper localhost:2181 --replication-factor 
 $ bin/kafka -topics.sh --list --zookeeper localhost:2181
 ```
 
+#### Using the Twitter Streaming API
+In order to download the tweets from twitter streaming API and push them to kafka queue, we have provided a python script twitter_to_kafka.py. The script will need your twitter authentication tokens (keys). A guide to create an app on twitter to get your authentication tokens can be found [here](https://themepacific.com/how-to-generate-api-key-consumer-token-access-key-for-twitter-oauth/994/).
+Once you have your authentication tokens, create or update the twitter.txt file with these credentials. Note, never commit your credentials on code sharing websites, such as Github. After updating the text file with your twitter keys, you can start downloading tweets from the twitter stream API and push them to the twitterstream topic in Kafka. Do this by running our program as follows:
+```
+$ python twitter_to_kafka.py
+```
+Note, this program must be running when you run your portion of the assignment, otherwise you will not get any tweets.
+
+##### To check if the data is landing in Kafka:
+```
+$ bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic twitterstream --from-beginning
+```
+
+##### Running the Stream Analysis Program
+```
+$ SPARK_HOME/bin/spark-submit --packages org.apache.spark:spark-streaming-kafka_2.10:1.5.1 twitterStream.py
+```
+
 
 ### Project Requirements
 For the project, in file twitterStream.py, the function to write the running total count of the number of positive and negative words that have been tweeted is included. In addition, the total positive and negative word counts for each timestep have been plotted. 
