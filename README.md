@@ -12,6 +12,28 @@ In addition, we also used Kafka to buffer the tweets before processing. Kafka pr
 
 ### Project Setup
 
+##### Installing Required Python Libraries
+We have provided a text file containing the required python packages: requirements.txt.
+To install all of these at once, simply run (only missing packages will be installed):
+```$ sudo pip install -r requirements.txt
+```
+
+
+##### Installing and Initializing Kafka
+Download and extract the latest binary from https://kafka.apache.org/downloads.html
+
+Start zookeeper service:
+$ bin/zookeeper -server -start.sh config/zookeeper.properties
+
+Start kafka service:
+$ bin/kafka -server -start.sh config/server.properties
+
+Create a topic named twitterstream in kafka:
+$ bin/kafka -topics.sh --create --zookeeper localhost:2181 --replication-factor 1
+--partitions 1 --topic twitterstream
+
+
+
 
 ### Project Requirements
 For the project, in file twitterStream.py, the function to write the running total count of the number of positive and negative words that have been tweeted is included. In addition, the total positive and negative word counts for each timestep have been plotted. 
