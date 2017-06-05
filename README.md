@@ -1,5 +1,5 @@
 ## Basic Twitter Sentiment Analytics using Apache Spark Streaming APIs and Python
-Python application for sentiment analysis on live twitter feed using Apache Spark, Kafka
+Python application for sentiment analysis on live twitter feed using Apache Spark and Apache Kafka
 
 
 ### Summary
