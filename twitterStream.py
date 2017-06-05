@@ -25,7 +25,7 @@ def make_plot(counts):
     Use plt.show() so that the plot will popup.
     """
     import matplotlib.pyplot as plt
-    # YOUR CODE HERE
+    
     pos = []
     neg = []
     for m in counts:
@@ -54,7 +54,7 @@ def load_wordlist(filename):
     """ 
     This function should return a list or set of words from the given filename.
     """
-    # YOUR CODE HERE
+    
     with open(filename) as f:
         content = f.readlines()
     content = [x.strip("\n") for x in content] 
@@ -98,7 +98,7 @@ def stream(ssc, pwords, nwords, duration):
     # Each element of tweets will be the text of a tweet.
     # You need to find the count of all the positive and negative words in these tweets.
     # Keep track of a running total counts and print this at every time step (use the pprint function).
-    # YOUR CODE HERE
+    
            
     
     # Let the counts variable hold the word counts for all time steps
