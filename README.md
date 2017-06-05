@@ -23,17 +23,25 @@ $ sudo pip install -r requirements.txt
 ##### Installing and Initializing Kafka
 Download and extract the latest binary from https://kafka.apache.org/downloads.html
 
-Start zookeeper service:
+##### Start zookeeper service:
+```
 $ bin/zookeeper -server -start.sh config/zookeeper.properties
+```
 
-Start kafka service:
+##### Start kafka service:
+```
 $ bin/kafka -server -start.sh config/server.properties
+```
 
-Create a topic named twitterstream in kafka:
-$ bin/kafka -topics.sh --create --zookeeper localhost:2181 --replication-factor 1
---partitions 1 --topic twitterstream
+##### Create a topic named twitterstream in kafka:
+```
+$ bin/kafka -topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic twitterstream
+```
 
-
+##### Check what topics you have with:
+```
+$ bin/kafka -topics.sh --list --zookeeper localhost:2181
+```
 
 
 ### Project Requirements
